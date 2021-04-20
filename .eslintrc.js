@@ -21,7 +21,11 @@ module.exports = {
     'no-unused-vars': 'warn',
     "vue/max-attributes-per-line": "off",
     "vue/html-closing-bracket-newline": "off",
+    "vue/html-closing-bracket-spacing": "off",
     "vue/singleline-html-element-content-newline": "off",
+    "no-trailing-space": "off",
+    "semi": "off",
+    "import/no-duplicates": "off",
   },
 
   overrides: [

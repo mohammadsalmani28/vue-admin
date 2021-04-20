@@ -12,7 +12,7 @@
     name: 'App',
     metaInfo: {
       title: 'App',
-      titleTemplate: '%s | Material Dashboard Free',
+      titleTemplate: process.env.VUE_APP_TITLE != null ? process.env.VUE_APP_TITLE : 'Admin Vue',
       htmlAttrs: { lang: 'en' },
       meta: [
         { charset: 'utf-8' },
