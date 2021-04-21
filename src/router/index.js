@@ -1,11 +1,8 @@
 // Imports
-import Vue from 'vue'
-import Router from 'vue-router'
-import { trailingSlash } from '@/util/helpers'
-import {
-  layout,
-  route,
-} from '@/util/routes'
+import Vue from 'vue';
+import Router from 'vue-router';
+import { trailingSlash } from '@/util/helpers';
+import { layout, route } from '@/util/routes';
 
 Vue.use(Router)
 
@@ -36,6 +33,7 @@ const router = new Router({
       // Maps
       route('Google Maps', null, 'maps/google'),
     ]),
+    route('404', null, '*'),
   ],
 })
 
