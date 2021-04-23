@@ -18,7 +18,7 @@
   import { get } from 'vuex-pathify'
 
   export default {
-    name: 'DefaultDrawerHeader',
+    name: 'SidebarHeader',
 
     computed: { version: get('app/version') },
   }

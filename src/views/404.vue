@@ -39,7 +39,7 @@
 <style scoped>
 
 .background {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/257418/andy-holmes-698828-unsplash.jpg);
+  background-image: url('/status-page-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;

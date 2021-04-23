@@ -6,7 +6,7 @@ import { IN_BROWSER } from '@/util/globals'
 
 const state = {
   dark: false,
-  drawer: {
+  sidebar: {
     image: 0,
     gradient: 0,
     mini: false,
@@ -50,10 +50,10 @@ const getters = {
     )
   },
   gradient: state => {
-    return state.gradients[state.drawer.gradient]
+    return state.gradients[state.sidebar.gradient]
   },
   image: state => {
-    return state.drawer.image === '' ? state.drawer.image : state.images[state.drawer.image]
+    return state.sidebar.image === '' ? state.sidebar.image : state.images[state.sidebar.image]
   },
 }
 

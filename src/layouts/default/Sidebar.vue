@@ -1,13 +1,12 @@
 <template>
-  <v-navigation-drawer id="default-drawer" v-model="drawer" :dark="dark" :right="$vuetify.rtl"
-                       :src="image" :mini-variant.sync="mini" mini-variant-width="80" app
-                       width="260">
-    <template v-if="drawerImage" #img="props">
+  <v-navigation-drawer id="sidebar" v-model="sidebar" :dark="dark" :right="$vuetify.rtl" :src="image"
+                       :mini-variant.sync="mini" mini-variant-width="80" app width="260">
+    <template v-if="sidebarImage" #img="props">
       <v-img :key="image" :gradient="gradient" v-bind="props"/>
     </template>
 
     <div class="px-2">
-      <default-drawer-header/>
+      <sidebar-header/>
       <v-divider class="mx-3 mb-2"/>
       <default-list :items="items"/>
     </div>
@@ -27,14 +26,12 @@
   import { get, sync } from 'vuex-pathify'
 
   export default {
-    name: 'DefaultDrawer',
+    name: 'Sidebar',
     components: {
-      DefaultDrawerHeader: () => import(
-        /* webpackChunkName: "default-drawer-header" */
-        './widgets/DrawerHeader'
+      SidebarHeader: () => import(
+        './widgets/SidebarHeader'
         ),
       DefaultList: () => import(
-        /* webpackChunkName: "default-list" */
         './List'
         ),
     },
@@ -49,7 +46,7 @@
           {
             title: 'User Profile',
             icon: 'mdi-account',
-            to: '/components/profile/',
+            to: '/profile/',
           },
           {
             title: 'Regular Tables',
@@ -74,7 +71,25 @@
           {
             title: 'Notifications',
             icon: 'mdi-bell',
-            to: '/components/notifications/',
+            to: '/notifications/',
+          },
+          {
+            title: 'Pages',
+            icon: 'mdi-file-find',
+            items: [
+              {
+                title: '404 Page Not Found',
+                to: '/notFound',
+              },
+              {
+                title: 'Login',
+                to: '/login',
+              },
+              {
+                title: 'Register',
+                to: '/register',
+              },
+            ],
           },
         ],
         image: process.env.VUE_APP_SIDEBAR_IMAGE != null ? process.env.VUE_APP_SIDEBAR_IMAGE : 'https://demos.creative-tim.com/material-dashboard-pro/assets/img/sidebar-1.jpg',
@@ -86,8 +101,8 @@
         'gradient',
       ]),
       ...sync('app', [
-        'drawer',
-        'drawerImage',
+        'sidebar',
+        'sidebarImage',
         'mini',
       ]),
     },
@@ -95,7 +110,7 @@
 </script>
 
 <style lang="sass">
-#default-drawer
+#sidebar
   .v-list-item
     margin-bottom: 8px
 

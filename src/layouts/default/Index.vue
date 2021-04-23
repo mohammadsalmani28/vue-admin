@@ -1,14 +1,12 @@
 <template>
   <v-app>
-    <default-bar />
+    <default-bar/>
 
-    <default-drawer />
+    <sidebar/>
 
-    <default-view />
+    <default-view/>
 
-    <default-footer />
-
-    <default-settings />
+    <default-footer/>
   </v-app>
 </template>
 
@@ -20,23 +18,19 @@
       DefaultBar: () => import(
         /* webpackChunkName: "default-app-bar" */
         './AppBar'
-      ),
-      DefaultDrawer: () => import(
+        ),
+      Sidebar: () => import(
         /* webpackChunkName: "default-drawer" */
-        './Drawer'
-      ),
+        './Sidebar'
+        ),
       DefaultFooter: () => import(
         /* webpackChunkName: "default-footer" */
         './Footer'
-      ),
-      DefaultSettings: () => import(
-        /* webpackChunkName: "default-settings" */
-        './Settings'
-      ),
+        ),
       DefaultView: () => import(
         /* webpackChunkName: "default-view" */
         './View'
-      ),
+        ),
     },
   }
 </script>

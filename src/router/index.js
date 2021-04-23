@@ -20,10 +20,10 @@ const router = new Router({
       route('Dashboard'),
 
       // Pages
-      route('UserProfile', null, 'components/profile'),
+      route('UserProfile', null, '/profile'),
 
       // Components
-      route('Notifications', null, 'components/notifications'),
+      route('Notifications', null, 'notifications'),
       route('Icons', null, 'components/icons'),
       route('Typography', null, 'components/typography'),
 
@@ -33,6 +33,8 @@ const router = new Router({
       // Maps
       route('Google Maps', null, 'maps/google'),
     ]),
+    route('Login', null, '/login'),
+    route('Register', null, '/register'),
     route('404', null, '*'),
   ],
 })

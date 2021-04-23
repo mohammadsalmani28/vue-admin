@@ -3,8 +3,8 @@ import { make } from 'vuex-pathify'
 
 // Data
 const state = {
-  drawer: null,
-  drawerImage: true,
+  sidebar: null,
+  sidebarImage: true,
   mini: false,
 }
 
