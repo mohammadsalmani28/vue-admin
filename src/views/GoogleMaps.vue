@@ -1,30 +1,12 @@
 <template>
-  <v-container
-    id="google-maps-view"
-    fluid
-    tag="section"
-  >
+  <v-container id="google-maps-view" fluid tag="section">
     <v-row>
-      <v-col
-        v-for="(item, i) in maps"
-        :key="i"
-        :md="i !== 0 ? 6 : undefined"
-        cols="12"
-      >
-        <material-card
-          :heading="item.heading"
-          color="accent"
-        >
+      <v-col v-for="(item, i) in maps" :key="i" :md="i !== 0 ? 6 : undefined" cols="12">
+        <material-card :heading="item.heading" color="accent">
           <v-card-text>
             <v-sheet>
-              <iframe
-                :src="`https://www.google.com/maps/embed?${item.iframe}`"
-                allowfullscreen
-                frameborder="0"
-                height="450"
-                style="border:0"
-                width="100%"
-              />
+              <iframe :src="`https://www.google.com/maps/embed?${item.iframe}`" allowfullscreen frameborder="0"
+                      height="450" style="border:0" width="100%"/>
             </v-sheet>
           </v-card-text>
         </material-card>
@@ -36,7 +18,6 @@
 <script>
   export default {
     name: 'GoogleMapsView',
-
     data: () => ({
       maps: [
         {

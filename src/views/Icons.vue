@@ -1,54 +1,24 @@
 <template>
-  <v-container
-    id="icons-view"
-    fluid
-    tag="section"
-  >
-    <view-intro
-      heading="Icons"
-      link="components/icons"
-    />
-
+  <v-container id="icons-view" fluid tag="section">
+    <view-intro heading="Icons" link="components/icons"/>
     <v-row>
       <v-col cols="12">
-        <material-card
-          color="success"
-          full-header
-        >
+        <material-card color="success" full-header>
           <template #heading>
             <div class="pa-6 white--text">
-              <div class="text-h4 font-weight-light">
-                Material Design Icons
-              </div>
-
+              <div class="text-h4 font-weight-light">Material Design Icons</div>
               <div class="text-subtitle-1">
-                See all available <a
-                  class="white--text"
-                  href="https://github.com/Templarian/MaterialDesign"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >Icons</a>
+                See all available
+                <a class="white--text" href="https://github.com/Templarian/MaterialDesign" target="_blank"
+                   rel="noopener noreferrer">Icons</a>
               </div>
             </div>
           </template>
-          <v-row
-            align="center"
-            justify="center"
-          >
-            <v-col
-              v-for="icon in icons"
-              :key="icon"
-              class="ma-2"
-              cols="auto"
-            >
+          <v-row align="center" justify="center">
+            <v-col v-for="icon in icons" :key="icon" class="ma-2" cols="auto">
               <v-tooltip top>
                 <template v-slot:activator="{ attrs, on }">
-                  <v-icon
-                    v-bind="attrs"
-                    v-on="on"
-                  >
-                    {{ icon }}
-                  </v-icon>
+                  <v-icon v-bind="attrs" v-on="on">{{ icon }}</v-icon>
                 </template>
                 <span>{{ icon }}</span>
               </v-tooltip>
@@ -56,21 +26,9 @@
           </v-row>
         </material-card>
       </v-col>
-
-      <v-col
-        class="mx-auto"
-        cols="auto"
-      >
-        <app-btn
-          href="https://github.com/Templarian/MaterialDesign"
-          large
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <v-icon left>
-            mdi-material-design
-          </v-icon>
-
+      <v-col class="mx-auto" cols="auto">
+        <app-btn href="https://github.com/Templarian/MaterialDesign" large rel="noopener noreferrer" target="_blank">
+          <v-icon left>mdi-material-design</v-icon>
           <span>See all icons</span>
         </app-btn>
       </v-col>
@@ -81,7 +39,6 @@
 <script>
   export default {
     name: 'IconsView',
-
     data: () => ({
       icons: [
         'mdi-access-point',

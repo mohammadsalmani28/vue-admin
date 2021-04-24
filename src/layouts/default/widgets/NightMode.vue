@@ -10,6 +10,7 @@
     methods: {
       nightMode () {
         this.$vuetify.theme.dark = this.$vuetify.theme.dark === false;
+        localStorage.setItem('dark', this.$vuetify.theme.dark);
       },
     },
   }

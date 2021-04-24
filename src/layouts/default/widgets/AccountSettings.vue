@@ -1,8 +1,5 @@
 <template>
-  <default-list
-    :items="items"
-    class="mb-n2"
-  />
+  <default-list :items="items" class="mb-n2"/>
 </template>
 
 <script>

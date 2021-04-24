@@ -1,6 +1,6 @@
 <template>
   <v-fade-transition mode="out-in">
-    <router-view />
+    <router-view/>
   </v-fade-transition>
 </template>
 
@@ -16,8 +16,14 @@
       htmlAttrs: { lang: 'en' },
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
+        },
       ],
+    },
+    created () {
+      this.$vuetify.theme.dark = localStorage.getItem('dark') === 'true';
     },
   }
 </script>

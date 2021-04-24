@@ -71,10 +71,10 @@
               <v-col cols="auto">Dark Mode</v-col>
               <v-spacer/>
               <v-col cols="auto">
-                <v-switch v-model="$vuetify.theme.dark" class="ma-0 pa-0" color="secondary" hide-details/>
+                <v-switch v-model="$vuetify.theme.dark" class="ma-0 pa-0" color="secondary" hide-details @change="nightMode"/>
               </v-col>
             </v-row>
-            <v-divider class="my-4 secondary" />
+            <v-divider class="my-4 secondary"/>
           </v-card-text>
         </app-card>
       </v-col>
@@ -83,5 +83,12 @@
 </template>
 
 <script>
-  export default { name: 'UserProfileView' }
+  export default {
+    name: 'UserProfileView',
+    methods: {
+      nightMode () {
+        localStorage.setItem('dark', this.$vuetify.theme.dark);
+      },
+    },
+  }
 </script>
